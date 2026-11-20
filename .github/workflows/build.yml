@@ -52,7 +52,7 @@ jobs:
           enable-plugins: |
             tk-inter
 
-          windows-console-mode: enable
+          windows-console-mode: attach
 
           # windows-icon-from-ico: 1000088823.ico
 
