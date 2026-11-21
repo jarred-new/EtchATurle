@@ -18,6 +18,20 @@ class TouchController(tk.Tk):
         self.label = ttk.Label(self, text="Etch a Turtle")
         self.label.pack(pady=20)
         
-        self.button = ttk.Button(self, text="Forward")
-        self.button.pack()
+        self.dpad_frame = tk.Frame(self)
+        self.dpad_frame.pack(expand=True)
+        
+        self.btn_style = {"width": 5, "height": 2, "font": ("Arial", 12, "bold")}
+
+        # 2. Place the 4 buttons using a 3x3 grid layout
+        self.btn_up = tk.Button(self.dpad_frame, text="▲", **self.btn_style)
+        self.btn_left = tk.Button(self.dpad_frame, text="◄", **self.btn_style)
+        self.btn_right = tk.Button(self.dpad_frame, text="►", **self.btn_style)
+        self.btn_down = tk.Button(self.dpad_frame, text="▼", **self.btn_style)
+        
+        self.btn_up.grid(row=0, column=1, padx=2, pady=2)
+        self.btn_left.grid(row=1, column=0, padx=2, pady=2)
+        self.btn_right.grid(row=1, column=2, padx=2, pady=2)
+        self.btn_down.grid(row=2, column=1, padx=2, pady=2)
+        
     
