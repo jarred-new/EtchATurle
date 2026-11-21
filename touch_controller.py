@@ -10,13 +10,16 @@ class TouchController(tk.Tk):
         # Configure the root window using 'self'
         self.title("Etch A Turtle Controller")
         self.geometry("400x300")
+        self.config(bg="red")
         
         # Add widgets
         self.create_widgets()
     
     def create_widgets(self):
-        self.label = ttk.Label(self, text="Etch a Turtle")
-        self.label.pack(pady=20)
+        self.header_style = {"background": "red", "foreground": "yellow", "font": ("Arial", 24)}
+        
+        self.header = ttk.Label(self, text="Etch a Turtle", **self.header_style)
+        self.header.pack(pady=20)
         
         self.dpad_frame = tk.Frame(self)
         self.dpad_frame.pack(expand=True)
