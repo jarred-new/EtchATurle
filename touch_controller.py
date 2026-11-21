@@ -13,8 +13,6 @@ class TouchController(tk.Tk):
         
         # Add widgets
         self.create_widgets()
-        
-        tk.mainloop()
     
     def create_widgets(self):
         self.label = ttk.Label(self, text="Etch a Turtle")

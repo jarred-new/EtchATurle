@@ -6,9 +6,8 @@ if __name__ == "__main__":
     touch = touch_controller.TouchController()
     
     def forward_turtle():
-        print('hi')
         turt.t.forward(10)
     
     touch.button.configure(command=forward_turtle)
-    
+    touch.mainloop()
     
