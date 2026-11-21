@@ -1,0 +1,6 @@
+{
+  "typeCheckingMode": "basic",
+  "exclude": ["**/__pycache__", "**/.venv", "**/venv", "**/build", "**/dist"],
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false
+}
