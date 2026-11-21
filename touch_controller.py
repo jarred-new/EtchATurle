@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 
 class TouchController(tk.Tk):
 
@@ -16,9 +15,10 @@ class TouchController(tk.Tk):
         self.create_widgets()
     
     def create_widgets(self):
-        self.header_style = {"background": "red", "foreground": "yellow", "font": ("Arial", 24)}
+        self.header_style = {"background": "red", "foreground": "yellow", "font": ("Arial", 24, "bold")}
+        self.footer_style = {"background": "red", "foreground": "yellow", "font": ("Arial", 12)}
         
-        self.header = ttk.Label(self, text="Etch a Turtle", **self.header_style)
+        self.header = tk.Label(self, text="Etch a Turtle", **self.header_style)
         self.header.pack(pady=20)
         
         self.dpad_frame = tk.Frame(self)
@@ -37,4 +37,6 @@ class TouchController(tk.Tk):
         self.btn_right.grid(row=1, column=2, padx=2, pady=2)
         self.btn_down.grid(row=2, column=1, padx=2, pady=2)
         
+        self.footer = tk.Label(self, text="Welcome to Etch A Turtle!", **self.footer_style)
+        self.footer.pack(anchor="sw", padx=5, pady=5)
     
