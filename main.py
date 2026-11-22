@@ -1,6 +1,8 @@
 import turtle_etchasketch
 import touch_controller
 
+ispen = 0
+
 if __name__ == "__main__":
     # Declare and Construct Windows
     turt = turtle_etchasketch.MainTurtle()
@@ -28,6 +30,18 @@ if __name__ == "__main__":
     def backward_turtle():
         turt.t.backward(10)
         print_movement()
+        
+    def set_pen():
+        global ispen
+        ispen += 1
+        
+        if ispen == 1:
+            turt.t.penup()
+            touch.penlift.config(text="Pen Up")
+        elif ispen == 2:
+            ispen = 0
+            turt.t.pendown()
+            touch.penlift.config(text="Pen Down")
     
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
@@ -35,5 +49,10 @@ if __name__ == "__main__":
     touch.btn_left.configure(command=left_turtle)
     touch.btn_right.configure(command=right_turtle)
     
+    touch.penlift.configure(command=set_pen)
+    
     touch.mainloop()
+    
+    
+    
     
