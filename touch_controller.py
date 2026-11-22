@@ -8,7 +8,7 @@ class TouchController(tk.Tk):
         
         # Configure the root window using 'self'
         self.title("Etch A Turtle Controller")
-        self.geometry("400x300")
+        self.geometry("400x467")
         self.config(bg="red")
         
         # Add widgets
@@ -35,6 +35,9 @@ class TouchController(tk.Tk):
         
         self.penlift = tk.Button(self, text="Pen Down", **self.btn_style_auto)
         self.penlift.pack(expand=True, pady=5)
+        
+        self.shakeClear = tk.Button(self, text="SHAKE!", **self.btn_style_auto)
+        self.shakeClear.pack(expand=True, pady=5)
         
         self.btn_up.grid(row=0, column=1, padx=2, pady=2)
         self.btn_left.grid(row=1, column=0, padx=2, pady=2)

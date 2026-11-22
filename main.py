@@ -43,6 +43,20 @@ if __name__ == "__main__":
             turt.t.pendown()
             touch.penlift.config(text="Pen Down")
     
+    def clear_turtle():
+        turt.t.penup()
+        touch.penlift.config(text="Pen Up", state="disabled")
+        
+        print_movement()
+        
+        turt.t.clear()
+        turt.t.home()
+        
+        turt.t.pendown()
+        touch.penlift.config(text="Pen Down", state="normal")
+        
+        print_movement()
+    
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
     
@@ -50,6 +64,8 @@ if __name__ == "__main__":
     touch.btn_right.configure(command=right_turtle)
     
     touch.penlift.configure(command=set_pen)
+    
+    touch.shakeClear.configure(command=clear_turtle)
     
     touch.bind('w', lambda event: touch.btn_up.invoke())
     touch.bind('W', lambda event: touch.btn_up.invoke())
@@ -62,6 +78,9 @@ if __name__ == "__main__":
     
     touch.bind('p', lambda event: touch.penlift.invoke())
     touch.bind('P', lambda event: touch.penlift.invoke())
+    
+    touch.bind('c', lambda event: touch.shakeClear.invoke())
+    touch.bind('C', lambda event: touch.shakeClear.invoke())
     
     touch.mainloop()
     
