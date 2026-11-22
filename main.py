@@ -1,6 +1,8 @@
 import turtle_etchasketch
 import touch_controller
 
+from tkinter import messagebox
+
 ispen = 0
 
 if __name__ == "__main__":
@@ -56,6 +58,20 @@ if __name__ == "__main__":
         touch.penlift.config(text="Pen Down", state="normal")
         
         print_movement()
+        
+    def set_turtle_from_dialog():
+        choices = ["crosshair", "arrow", "turtle", "circle", "square", "triangle", "classic"]
+        user_choice = turt.screen.textinput(
+            title="Choose Shape",
+            prompt="Enter a shape (crosshair, arrow, turtle, circle, square, triangle, classic):"
+        )
+        
+        if user_choice:
+            cleaned_choice = user_choice.strip().lower()
+            if cleaned_choice is choices:
+                turt.t.shape(cleaned_choice)
+            else:
+                messagebox.showerror("Error", "Invalid Shape Selected!", parent=touch)
     
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
@@ -66,6 +82,8 @@ if __name__ == "__main__":
     touch.penlift.configure(command=set_pen)
     
     touch.shakeClear.configure(command=clear_turtle)
+    
+    touch.turtlePick.configure(command=set_turtle_from_dialog)
     
     touch.bind('w', lambda event: touch.btn_up.invoke())
     touch.bind('W', lambda event: touch.btn_up.invoke())
