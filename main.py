@@ -51,6 +51,18 @@ if __name__ == "__main__":
     
     touch.penlift.configure(command=set_pen)
     
+    touch.bind('w', lambda event: touch.btn_up.invoke())
+    touch.bind('W', lambda event: touch.btn_up.invoke())
+    touch.bind('s', lambda event: touch.btn_down.invoke())
+    touch.bind('S', lambda event: touch.btn_down.invoke())
+    touch.bind('a', lambda event: touch.btn_left.invoke())
+    touch.bind('A', lambda event: touch.btn_left.invoke())
+    touch.bind('d', lambda event: touch.btn_right.invoke())
+    touch.bind('D', lambda event: touch.btn_right.invoke())
+    
+    touch.bind('p', lambda event: touch.penlift.invoke())
+    touch.bind('P', lambda event: touch.penlift.invoke())
+    
     touch.mainloop()
     
     
