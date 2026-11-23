@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 
 class TouchController(tk.Tk):
@@ -6,10 +7,15 @@ class TouchController(tk.Tk):
         # Initialize the parent tk.Tk class
         super().__init__()
         
+        self.base_dir = os.path.dirname(os.path.abspath(__file__))
+        self.icon_path = os.path.join(self.base_dir, "assets", "EtchASketch-01.png")
+        
         # Configure the root window using 'self'
         self.title("Etch A Turtle Controller")
         self.geometry("400x467")
         self.config(bg="red")
+        self.appicon = tk.PhotoImage(file=self.icon_path, master=self)
+        self.iconphoto(True, self.appicon)
         
         # Add widgets
         self.create_widgets()

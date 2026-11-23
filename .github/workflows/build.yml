@@ -54,10 +54,9 @@ jobs:
 
           windows-console-mode: attach
 
-          # windows-icon-from-ico: 1000088823.ico
+          windows-icon-from-ico: assets/EtchASketch-01.ico
 
-          # include-data-files: |
-          #  1000088823.ico=1000088823.ico
+          include-data-files: assets/EtchASketch-01.ico=assets/EtchASketch-01.ico
 
           output-dir: build
 

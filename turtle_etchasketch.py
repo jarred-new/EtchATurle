@@ -1,10 +1,17 @@
-import math
+import os
 import turtle
+import tkinter as tk
 
 class MainTurtle(): 
     
     def __init__(self):
+        self.base_dir = os.path.dirname(os.path.abspath(__file__))
+        self.icon_path = os.path.join(self.base_dir, "assets", "EtchASketch-01.png")
+        
         self.screen = turtle.Screen()
+        self.icon = tk.PhotoImage(file=self.icon_path)
+
+        self.screen._root.iconphoto(True, self.icon)
         
         self.screen.title("Etch A Turtle")
 
