@@ -66,6 +66,13 @@ jobs:
 
           lto: no
 
+      - name: Copy assets with PowerShell
+        shell: pwsh
+        run: |
+            # Copy a single file (overwriting if it exists)
+            Copy-Item -Path "assets/" -Destination "build/*.dist" -Force
+            
+          
       - name: Upload Windows x86 build
         uses: actions/upload-artifact@v4
         with:
