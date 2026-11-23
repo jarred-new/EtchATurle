@@ -67,7 +67,7 @@ if __name__ == "__main__":
         )
         
         if user_choice:
-            cleaned_choice = user_choice.strip().lower()
+            cleaned_choice = user_choice.lower()
             if cleaned_choice in valid_choices:
                 turt.t.shape(cleaned_choice)
             else:
