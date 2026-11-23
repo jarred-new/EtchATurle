@@ -60,7 +60,7 @@ if __name__ == "__main__":
         print_movement()
         
     def set_turtle_from_dialog():
-        choices = ["crosshair", "arrow", "turtle", "circle", "square", "triangle", "classic"]
+        valid_choices = ["crosshair", "arrow", "turtle", "circle", "square", "triangle", "classic"]
         user_choice = turt.screen.textinput(
             title="Choose Shape",
             prompt="Enter a shape (crosshair, arrow, turtle, circle, square, triangle, classic):"
@@ -68,7 +68,7 @@ if __name__ == "__main__":
         
         if user_choice:
             cleaned_choice = user_choice.strip().lower()
-            if cleaned_choice is choices:
+            if cleaned_choice in valid_choices:
                 turt.t.shape(cleaned_choice)
             else:
                 messagebox.showerror("Error", "Invalid Shape Selected!", parent=touch)
