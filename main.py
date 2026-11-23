@@ -2,6 +2,7 @@ import turtle_etchasketch
 import touch_controller
 
 from tkinter import messagebox
+from tkinter import colorchooser
 
 ispen = 0
 
@@ -72,6 +73,11 @@ if __name__ == "__main__":
                 turt.t.shape(cleaned_choice)
             else:
                 messagebox.showerror("Error", "Invalid Shape Selected!", parent=touch)
+                
+    def set_turtle_color():
+       rgb, hexc = colorchooser.askcolor(title="Change Turtle Color", parent=touch)
+       if hexc:
+           turt.t.color(hexc)
     
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
@@ -84,6 +90,8 @@ if __name__ == "__main__":
     touch.shakeClear.configure(command=clear_turtle)
     
     touch.turtlePick.configure(command=set_turtle_from_dialog)
+    
+    touch.colorPick.configure(command=set_turtle_color)
     
     touch.bind('w', lambda event: touch.btn_up.invoke())
     touch.bind('W', lambda event: touch.btn_up.invoke())

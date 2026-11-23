@@ -42,6 +42,9 @@ class TouchController(tk.Tk):
         self.turtlePick = tk.Button(self, text="Set Turtle", **self.btn_style_auto)
         self.turtlePick.pack(expand=True, pady=5)
         
+        self.colorPick = tk.Button(self, text="Set Color", **self.btn_style_auto)
+        self.colorPick.pack(expand=True, pady=5)
+        
         self.btn_up.grid(row=0, column=1, padx=2, pady=2)
         self.btn_left.grid(row=1, column=0, padx=2, pady=2)
         self.btn_right.grid(row=1, column=2, padx=2, pady=2)
