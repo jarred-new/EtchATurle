@@ -56,7 +56,9 @@ jobs:
 
           windows-icon-from-ico: assets/EtchASketch-01.ico
 
-          include-data-files: assets/EtchASketch-01.ico=assets/EtchASketch-01.ico
+          include-data-files: |
+            assets/EtchASketch-01.ico=assets/EtchASketch-01.ico
+            assets/EtchASketch-01.png=assets/EtchASketch-01.png
 
           output-dir: build
 
@@ -66,13 +68,6 @@ jobs:
 
           lto: no
 
-      - name: Copy assets with PowerShell
-        shell: pwsh
-        run: |
-            # Copy a single file (overwriting if it exists)
-            Copy-Item -Path "assets/" -Destination "build/*.dist" -Force
-            
-          
       - name: Upload Windows x86 build
         uses: actions/upload-artifact@v4
         with:
