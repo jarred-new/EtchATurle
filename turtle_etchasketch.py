@@ -1,6 +1,6 @@
 import os
-import turtle
 import tkinter as tk
+import turtle
 
 class MainTurtle(): 
     
