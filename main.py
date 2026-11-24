@@ -78,6 +78,14 @@ if __name__ == "__main__":
        rgb, hexc = colorchooser.askcolor(title="Change Turtle Color", parent=touch)
        if hexc:
            turt.t.color(hexc)
+
+    def set_turtle_visibility():
+        if turt.t.isvisible():
+            turt.t.hideturtle()
+            touch.hideTurtle.config(text="Show Turtle")
+        else:
+            turt.t.showturtle()
+            touch.hideTurtle.config(text="Hide Turtle")
     
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
@@ -93,6 +101,8 @@ if __name__ == "__main__":
     
     touch.colorPick.configure(command=set_turtle_color)
     
+    touch.hideTurtle.configure(command=set_turtle_visibility)
+    
     touch.bind('w', lambda event: touch.btn_up.invoke())
     touch.bind('W', lambda event: touch.btn_up.invoke())
     touch.bind('s', lambda event: touch.btn_down.invoke())
@@ -107,6 +117,15 @@ if __name__ == "__main__":
     
     touch.bind('c', lambda event: touch.shakeClear.invoke())
     touch.bind('C', lambda event: touch.shakeClear.invoke())
+
+    touch.bind('t', lambda event: touch.turtlePick.invoke())
+    touch.bind('T', lambda event: touch.turtlePick.invoke())
+
+    touch.bind('o', lambda event: touch.colorPick.invoke())
+    touch.bind('O', lambda event: touch.colorPick.invoke())
+    
+    touch.bind('h', lambda event: touch.hideTurtle.invoke())
+    touch.bind('H', lambda event: touch.hideTurtle.invoke())
     
     touch.mainloop()
     

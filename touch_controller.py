@@ -38,18 +38,24 @@ class TouchController(tk.Tk):
         self.btn_left = tk.Button(self.dpad_frame, text="◄", **self.btn_style)
         self.btn_right = tk.Button(self.dpad_frame, text="►", **self.btn_style)
         self.btn_down = tk.Button(self.dpad_frame, text="▼", **self.btn_style)
+
+        self.tools = tk.Frame(self)
+        self.tools.pack(expand=True, pady=10)
         
-        self.penlift = tk.Button(self, text="Pen Down", **self.btn_style_auto)
-        self.penlift.pack(expand=True, pady=5)
+        self.penlift = tk.Button(self.tools, text="Pen Down", **self.btn_style_auto)
+        self.penlift.grid(row=0, column=0, padx=2, pady=2)
+
+        self.hideTurtle = tk.Button(self.tools, text="Hide Turtle", **self.btn_style_auto)
+        self.hideTurtle.grid(row=0, column=1, padx=2, pady=2)
         
+        self.turtlePick = tk.Button(self.tools, text="Set Turtle", **self.btn_style_auto)
+        self.turtlePick.grid(row=1, column=0, padx=2, pady=2)
+        
+        self.colorPick = tk.Button(self.tools, text="Set Color", **self.btn_style_auto)
+        self.colorPick.grid(row=1, column=1, padx=2, pady=2)
+
         self.shakeClear = tk.Button(self, text="SHAKE!", **self.btn_style_auto)
-        self.shakeClear.pack(expand=True, pady=5)
-        
-        self.turtlePick = tk.Button(self, text="Set Turtle", **self.btn_style_auto)
-        self.turtlePick.pack(expand=True, pady=5)
-        
-        self.colorPick = tk.Button(self, text="Set Color", **self.btn_style_auto)
-        self.colorPick.pack(expand=True, pady=5)
+        self.shakeClear.pack(expand=True, pady=10)
         
         self.btn_up.grid(row=0, column=1, padx=2, pady=2)
         self.btn_left.grid(row=1, column=0, padx=2, pady=2)

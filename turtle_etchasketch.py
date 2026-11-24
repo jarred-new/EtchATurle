@@ -11,7 +11,7 @@ class MainTurtle():
         self.screen = turtle.Screen()
         self.icon = tk.PhotoImage(file=self.icon_path)
 
-        self.screen._root.iconphoto(True, self.icon)
+        self.screen.getcanvas().winfo_toplevel().iconphoto(True, self.icon)
         
         self.screen.title("Etch A Turtle")
 
