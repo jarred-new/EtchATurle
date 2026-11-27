@@ -19,6 +19,7 @@ class TouchController(tk.Tk):
         
         # Add widgets
         self.create_widgets()
+        self.create_menu()
     
     def create_widgets(self):
         self.header_style = {"background": "red", "foreground": "yellow", "font": ("Arial", 24, "bold")}
@@ -68,10 +69,13 @@ class TouchController(tk.Tk):
         )
         self.footer.pack(anchor="sw", padx=5, pady=5)
         
+    def create_menu(self):
+        self.mainMenu = tk.Menu(self)
+        self.config(menu=self.mainMenu)
         
-        
-        
-        
+        self.fileMenu = tk.Menu(self.mainMenu, tearoff=0)
+        self.turtleMenu = tk.Menu(self.mainMenu, tearoff=0)
+        # Creating or putting it on the menu is at the end of the main.py file
         
         
     

@@ -127,6 +127,18 @@ if __name__ == "__main__":
     touch.bind('h', lambda event: touch.hideTurtle.invoke())
     touch.bind('H', lambda event: touch.hideTurtle.invoke())
     
+    # fileMenu
+    touch.fileMenu.add_command(label="Take Picture")
+    touch.fileMenu.add_command(label="Exit")
+    
+    # turtleMenu
+    touch.turtleMenu.add_command(label="Change Turtle Shape")
+    touch.turtleMenu.add_command(label="Change Turtle Color")
+    touch.turtleMenu.add_command(label="Change BG Color")
+    
+    touch.mainMenu.add_cascade(label="File", menu=touch.fileMenu)
+    touch.mainMenu.add_cascade(label="Turtle", menu=touch.turtleMenu)
+    
     touch.mainloop()
     
     
