@@ -49,11 +49,11 @@ class TouchController(tk.Tk):
         self.hideTurtle = tk.Button(self.tools, text="Hide Turtle", **self.btn_style_auto)
         self.hideTurtle.grid(row=0, column=1, padx=2, pady=2)
         
-        self.turtlePick = tk.Button(self.tools, text="Set Turtle", **self.btn_style_auto)
-        self.turtlePick.grid(row=1, column=0, padx=2, pady=2)
+        #self.turtlePick = tk.Button(self.tools, text="Set Turtle", **self.btn_style_auto)
+        #self.turtlePick.grid(row=1, column=0, padx=2, pady=2)
         
-        self.colorPick = tk.Button(self.tools, text="Set Color", **self.btn_style_auto)
-        self.colorPick.grid(row=1, column=1, padx=2, pady=2)
+        #self.colorPick = tk.Button(self.tools, text="Set Color", **self.btn_style_auto)
+        #self.colorPick.grid(row=1, column=1, padx=2, pady=2)
 
         self.shakeClear = tk.Button(self, text="SHAKE!", **self.btn_style_auto)
         self.shakeClear.pack(expand=True, pady=10)

@@ -97,9 +97,9 @@ if __name__ == "__main__":
     
     touch.shakeClear.configure(command=clear_turtle)
     
-    touch.turtlePick.configure(command=set_turtle_from_dialog)
+    #touch.turtlePick.configure(command=set_turtle_from_dialog)
     
-    touch.colorPick.configure(command=set_turtle_color)
+    #touch.colorPick.configure(command=set_turtle_color)
     
     touch.hideTurtle.configure(command=set_turtle_visibility)
     
@@ -118,11 +118,11 @@ if __name__ == "__main__":
     touch.bind('c', lambda event: touch.shakeClear.invoke())
     touch.bind('C', lambda event: touch.shakeClear.invoke())
 
-    touch.bind('t', lambda event: touch.turtlePick.invoke())
-    touch.bind('T', lambda event: touch.turtlePick.invoke())
+    touch.bind('t', lambda event: set_turtle_from_dialog())
+    touch.bind('T', lambda event: set_turtle_from_dialog())
 
-    touch.bind('o', lambda event: touch.colorPick.invoke())
-    touch.bind('O', lambda event: touch.colorPick.invoke())
+    touch.bind('o', lambda event: set_turtle_color())
+    touch.bind('O', lambda event: set_turtle_color())
     
     touch.bind('h', lambda event: touch.hideTurtle.invoke())
     touch.bind('H', lambda event: touch.hideTurtle.invoke())
