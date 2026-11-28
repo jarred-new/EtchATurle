@@ -91,6 +91,11 @@ if __name__ == "__main__":
         else:
             turt.t.showturtle()
             touch.hideTurtle.config(text="Hide Turtle")
+            
+    def exit_app():
+        if messagebox.askyesno(title="Exit?", message="Do you want to exit?", parent=touch):
+            touch.destroy()
+            turt.screen._root.destroy()
     
     touch.btn_up.configure(command=forward_turtle)
     touch.btn_down.configure(command=backward_turtle)
@@ -138,7 +143,7 @@ if __name__ == "__main__":
     # fileMenu
     touch.fileMenu.add_command(label="Take Picture")
     touch.fileMenu.add_separator()
-    touch.fileMenu.add_command(label="Exit")
+    touch.fileMenu.add_command(label="Exit", command=exit_app)
     
     # turtleMenu
     touch.turtleMenu.add_command(label="Change Turtle Shape", command=set_turtle_from_dialog)
@@ -149,6 +154,9 @@ if __name__ == "__main__":
     
     touch.mainMenu.add_cascade(label="File", menu=touch.fileMenu)
     touch.mainMenu.add_cascade(label="Turtle", menu=touch.turtleMenu)
+    
+    touch.protocol("WM_DELETE_WINDOW", exit_app)
+    turt.screen._root.protocol("WM_DELETE_WINDOW", exit_app)
     
     touch.mainloop()
     
