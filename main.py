@@ -75,10 +75,10 @@ if __name__ == "__main__":
                 messagebox.showerror("Error", "Invalid Shape Selected!", parent=touch)
                 
     def set_turtle_color():
-       rgb, hexc = colorchooser.askcolor(title="Change Turtle Color", parent=touch)
-       if hexc:
-           turt.t.color(hexc)
-           
+        rgb, hexc = colorchooser.askcolor(title="Change Turtle Color", parent=touch)
+        if hexc:
+            turt.t.color(hexc)
+            
     def set_turtle_bg_color():
         rgb, hexc = colorchooser.askcolor(title="Change Background Color", parent=touch)
         if hexc:
@@ -128,6 +128,9 @@ if __name__ == "__main__":
 
     touch.bind('o', lambda event: set_turtle_color())
     touch.bind('O', lambda event: set_turtle_color())
+    
+    touch.bind('b', lambda event: set_turtle_bg_color())
+    touch.bind('B', lambda event: set_turtle_bg_color())
     
     touch.bind('h', lambda event: touch.hideTurtle.invoke())
     touch.bind('H', lambda event: touch.hideTurtle.invoke())
