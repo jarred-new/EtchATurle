@@ -78,6 +78,11 @@ if __name__ == "__main__":
        rgb, hexc = colorchooser.askcolor(title="Change Turtle Color", parent=touch)
        if hexc:
            turt.t.color(hexc)
+           
+    def set_turtle_bg_color():
+        rgb, hexc = colorchooser.askcolor(title="Change Background Color", parent=touch)
+        if hexc:
+            turt.screen.bgcolor(hexc)
 
     def set_turtle_visibility():
         if turt.t.isvisible():
@@ -135,7 +140,7 @@ if __name__ == "__main__":
     # turtleMenu
     touch.turtleMenu.add_command(label="Change Turtle Shape", command=set_turtle_from_dialog)
     touch.turtleMenu.add_command(label="Change Turtle Color", command=set_turtle_color)
-    touch.turtleMenu.add_command(label="Change BG Color")
+    touch.turtleMenu.add_command(label="Change BG Color", command=set_turtle_bg_color)
     touch.turtleMenu.add_separator()
     touch.turtleMenu.add_command(label="Shake the Device!", command=clear_turtle)
     
